@@ -4,7 +4,9 @@ import pandas as pd
 
 def main():
     # Judul halaman
-    st.header("Pengumuman Hasil")
+   
+
+    st.header("Pengumuman Hasil UH Turunan Fungsi Part-1")
 
     # Memuat data dari file CSV
     @st.cache_data()  # Menggunakan caching untuk meningkatkan performa
@@ -14,10 +16,10 @@ def main():
 
     def color_cells(val):
         if pd.to_numeric(val, errors="coerce") > 60:
-            return "color: green"
+            return "color: #36f5ff"
             # return 'background-color: green'
         else:
-            return "color: red"
+            return "color: #E694FF"
             # return 'background-color: red'
 
     # Memuat data CSV
