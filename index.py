@@ -36,7 +36,8 @@ def main():
     # st.write(data)
     # data.style.set_properties(**{'height': '20px'})
 
-    st.dataframe(data,width=700, height=900)
+    # st.dataframe(data,width=700, height=900)
+    st.dataframe(data)
     st.markdown(
         """
                 <style>
