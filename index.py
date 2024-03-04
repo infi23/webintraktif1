@@ -34,7 +34,9 @@ def main():
 
     # Menampilkan data frame
     # st.write(data)
-    st.dataframe(data)
+    # data.style.set_properties(**{'height': '20px'})
+
+    st.dataframe(data,width=700, height=900)
     st.markdown(
         """
                 <style>
