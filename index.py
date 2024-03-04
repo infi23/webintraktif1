@@ -29,7 +29,7 @@ def main():
     data["STATUS"] = data["TOTAL"].apply(
         lambda x: "Tuntas" if x >= 60 else "Tidak Tuntas"
     )
-    data = data[data["TOTAL"] > 0]
+    data = data[data["TOTAL"] >= 0]
     data = data.style.map(color_cells, subset=["TOTAL"])
 
     # Menampilkan data frame
