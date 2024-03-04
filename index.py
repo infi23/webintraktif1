@@ -29,14 +29,15 @@ def main():
     data["STATUS"] = data["TOTAL"].apply(
         lambda x: "Tuntas" if x >= 60 else "Tidak Tuntas"
     )
-    data = data[data["TOTAL"] >= 0]
+    data = data[data["TOTAL"] > 0]
+    
     data = data.style.map(color_cells, subset=["TOTAL"])
 
     # Menampilkan data frame
     # st.write(data)
     # data.style.set_properties(**{'height': '20px'})
 
-    st.dataframe(data,width=700, height=500)
+    st.dataframe(data, width=700, height=500)
     # st.dataframe(data)
     st.markdown(
         """
@@ -62,9 +63,6 @@ def main():
                 """,
         unsafe_allow_html=True,
     )
-    
-
-
 
 
 if __name__ == "__main__":
