@@ -2,12 +2,9 @@ import streamlit as st
 import pandas as pd
 
 
-
 def main():
     # Judul halaman
     # Use local CSS
-    
-   
 
     st.header("Pengumuman Hasil UH Turunan Fungsi Part-1")
 
@@ -28,9 +25,11 @@ def main():
     # Memuat data CSV
     file_path = "data.csv"
     data = load_data(file_path)
-    data['TOTAL'] =  data['SKOR_DASAR']+data['SKOR_LANJUT']
-    data['STATUS'] = data['TOTAL'].apply(lambda x: 'Tuntas' if x >= 60 else 'Tidak Tuntas')
-    data = data[data['TOTAL'] >= 0]
+    data["TOTAL"] = data["SKOR_DASAR"] + data["SKOR_LANJUT"]
+    data["STATUS"] = data["TOTAL"].apply(
+        lambda x: "Tuntas" if x >= 60 else "Tidak Tuntas"
+    )
+    data = data[data["TOTAL"] >= 0]
     data = data.style.map(color_cells, subset=["TOTAL"])
 
     # Menampilkan data frame
@@ -48,7 +47,6 @@ def main():
     )
 
 
-
 if __name__ == "__main__":
     hide_streamlit_style = """
         <style>
@@ -56,5 +54,16 @@ if __name__ == "__main__":
         footer {visibility: hidden;}
         </style>
         """
-    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+    import streamlit as st
+
+    # Add custom CSS to hide the GitHub icon
+    hide_github_icon = """
+    #GithubIcon {
+    visibility: hidden;
+    }
+    """
+    st.markdown(hide_github_icon, unsafe_allow_html=True)
+
+    # Your app code goes here
     main()
