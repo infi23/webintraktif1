@@ -6,13 +6,7 @@ import pandas as pd
 def main():
     # Judul halaman
     # Use local CSS
-    hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+    
    
 
     st.header("Pengumuman Hasil UH Turunan Fungsi Part-1")
@@ -52,6 +46,13 @@ def main():
                 """,
         unsafe_allow_html=True,
     )
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 
 if __name__ == "__main__":
