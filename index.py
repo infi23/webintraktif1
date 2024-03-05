@@ -15,7 +15,7 @@ def main():
         return data
 
     def color_cells(val):
-        if pd.to_numeric(val, errors="coerce") > 60:
+        if pd.to_numeric(val, errors="coerce") >= 60:
             return "color: #36f5ff"
             # return 'background-color: green'
         else:
