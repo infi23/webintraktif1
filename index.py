@@ -6,7 +6,7 @@ def main():
     # Judul halaman
     # Use local CSS
 
-    st.header("Pengumuman Hasil UH Turunan Fungsi Part-1")
+    st.header("Pengumuman Hasil UH Matriks")
 
     # Memuat data dari file CSV
     @st.cache_data()  # Menggunakan caching untuk meningkatkan performa
@@ -15,7 +15,7 @@ def main():
         return data
 
     def color_cells(val):
-        if pd.to_numeric(val, errors="coerce") >= 60:
+        if pd.to_numeric(val, errors="coerce") >= 70:
             return "color: #36f5ff"
             # return 'background-color: green'
         else:
@@ -27,7 +27,7 @@ def main():
     data = load_data(file_path)
     data["TOTAL"] = data["SKOR_DASAR"] + data["SKOR_LANJUT"]
     data["STATUS"] = data["TOTAL"].apply(
-        lambda x: "Tuntas" if x >= 60 else "Tidak Tuntas"
+        lambda x: "Tuntas" if x >= 70 else "Tidak Tuntas"
     )
     data = data[data["TOTAL"] > 0]
     
