@@ -49,6 +49,7 @@ def main():
                 """,
         unsafe_allow_html=True,
     )
+
     st.markdown(
         """
                 <style>
@@ -58,6 +59,9 @@ def main():
                 [data-testid="baseButton-header"] {
                     display: none;
                 }
+                
+                #MainMenu {visibility: hidden;}
+                footer {visibility: hidden;}
 
                 </style>
                 """,
